@@ -38,6 +38,7 @@ class TripHistoryScreen extends StatelessWidget {
                       context,
                       'Ravi Varun',
                       'lib/assets/images/ravi.png',
+                      'lib/assets/images/Swift.png',
                       '24/08/24',
                       '14/02/14',
                       'deets.pdf',
@@ -46,32 +47,36 @@ class TripHistoryScreen extends StatelessWidget {
                       context,
                       'Andy Wilson',
                       'lib/assets/images/andy.png',
-                      '01/06/22',
+                      'lib/assets/images/Innova.png',
                       '10/05/15',
+                      '01/06/22',
                       'deets_andy.pdf',
                       20),
                   _buildDriverCard(
                       context,
                       'Tanya Ravi',
                       'lib/assets/images/tanya.png',
-                      '15/11/23',
+                      'lib/assets/images/Ertiga.png',
                       '08/03/16',
+                      '15/11/23',
                       'deets_tanya.pdf',
                       15),
                   _buildDriverCard(
                       context,
                       'Jade Thomas',
                       'lib/assets/images/jade.png',
-                      '20/02/25',
+                      'lib/assets/images/Swift.png',
                       '12/07/17',
+                      '20/02/25',
                       'deets_jade.pdf',
                       8),
                   _buildDriverCard(
                       context,
                       'Aiswarya',
                       'lib/assets/images/ais.png',
-                      '30/09/21',
+                      'lib/assets/images/Innova.png',
                       '15/01/13',
+                      '30/09/21',
                       'deets_ais.pdf',
                       25), // Add more driver cards as needed
                 ],
@@ -87,6 +92,7 @@ class TripHistoryScreen extends StatelessWidget {
       BuildContext context,
       String name,
       String imagePath,
+      String vehicleImagePath,
       String joiningDate,
       String licenseDate,
       String licenseDetails,
@@ -120,18 +126,23 @@ class TripHistoryScreen extends StatelessWidget {
             Positioned(
               top: 10,
               left: 10,
-              child: ClipOval(
-                child: Image.asset(
-                  imagePath,
-                  width: 80,
-                  height: 80,
-                  fit: BoxFit.cover,
-                ),
+              child: Row(
+                children: [
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage(imagePath),
+                  ),
+                  SizedBox(width: 20),
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage(vehicleImagePath),
+                  ),
+                ],
               ),
             ),
             Positioned(
               top: 10,
-              left: 100,
+              left: 300,
               child: Text(
                 name,
                 style: GoogleFonts.mulish(
@@ -143,7 +154,7 @@ class TripHistoryScreen extends StatelessWidget {
             ),
             Positioned(
               top: 40,
-              left: 100,
+              left: 300,
               child: Row(
                 children: [
                   Text(
@@ -159,7 +170,7 @@ class TripHistoryScreen extends StatelessWidget {
             ),
             Positioned(
               bottom: 10,
-              left: 100,
+              left: 300,
               child: Row(
                 children: [
                   Text(
