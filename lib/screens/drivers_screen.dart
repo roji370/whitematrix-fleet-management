@@ -34,11 +34,46 @@ class DriversScreen extends StatelessWidget {
               child: ListView(
                 padding: EdgeInsets.all(16.0),
                 children: [
-                  _buildDriverCard(context, 'Ravi Varun', 'lib/assets/images/ravi.png', '24/08/24', '14/02/14', 'deets.pdf', 10),
-                  _buildDriverCard(context, 'Andy Wilson', 'lib/assets/images/andy.png', '01/06/22', '10/05/15', 'deets_andy.pdf', 20),
-                  _buildDriverCard(context, 'Tanya Ravi', 'lib/assets/images/tanya.png', '15/11/23', '08/03/16', 'deets_tanya.pdf', 15),
-                  _buildDriverCard(context, 'Jade Thomas', 'lib/assets/images/jade.png', '20/02/25', '12/07/17', 'deets_jade.pdf', 8),
-                  _buildDriverCard(context, 'Aiswarya', 'lib/assets/images/ais.png', '30/09/21', '15/01/13', 'deets_ais.pdf', 25), // Add more driver cards as needed
+                  _buildDriverCard(
+                      context,
+                      'Ravi Varun',
+                      'lib/assets/images/ravi.png',
+                      '24/08/24',
+                      '14/02/14',
+                      'deets.pdf',
+                      10),
+                  _buildDriverCard(
+                      context,
+                      'Andy Wilson',
+                      'lib/assets/images/andy.png',
+                      '01/06/22',
+                      '10/05/15',
+                      'deets_andy.pdf',
+                      20),
+                  _buildDriverCard(
+                      context,
+                      'Tanya Ravi',
+                      'lib/assets/images/tanya.png',
+                      '15/11/23',
+                      '08/03/16',
+                      'deets_tanya.pdf',
+                      15),
+                  _buildDriverCard(
+                      context,
+                      'Jade Thomas',
+                      'lib/assets/images/jade.png',
+                      '20/02/25',
+                      '12/07/17',
+                      'deets_jade.pdf',
+                      8),
+                  _buildDriverCard(
+                      context,
+                      'Aiswarya',
+                      'lib/assets/images/ais.png',
+                      '30/09/21',
+                      '15/01/13',
+                      'deets_ais.pdf',
+                      25), // Add more driver cards as needed
                 ],
               ),
             ),
@@ -48,7 +83,14 @@ class DriversScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildDriverCard(BuildContext context, String name, String imagePath, String joiningDate, String licenseDate, String licenseDetails, int tripsTaken) {
+  Widget _buildDriverCard(
+      BuildContext context,
+      String name,
+      String imagePath,
+      String joiningDate,
+      String licenseDate,
+      String licenseDetails,
+      int tripsTaken) {
     return GestureDetector(
       onTap: () {
         Navigator.push(

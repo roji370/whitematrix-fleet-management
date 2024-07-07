@@ -97,107 +97,127 @@ class TripHistoryScreen extends StatelessWidget {
       String licenseDate,
       String licenseDetails,
       int tripsTaken) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => DriverDetailsScreen(
-              name: name,
-              imagePath: imagePath,
-              joiningDate: joiningDate,
-              licenseDate: licenseDate,
-              licenseDetails: licenseDetails,
-              tripsTaken: tripsTaken,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        double cardHeight = constraints.maxWidth *
+            0.3; // Adjust the height based on screen width
+
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DriverDetailsScreen(
+                  name: name,
+                  imagePath: imagePath,
+                  joiningDate: joiningDate,
+                  licenseDate: licenseDate,
+                  licenseDetails: licenseDetails,
+                  tripsTaken: tripsTaken,
+                ),
+              ),
+            );
+          },
+          child: Container(
+            margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10),
+            width: double.infinity,
+            height: cardHeight,
+            decoration: BoxDecoration(
+              color: Color(0xff1e283a),
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+            child: Stack(
+              children: [
+                Positioned(
+                  top: constraints.maxWidth * 0.02,
+                  left: constraints.maxWidth * 0.02,
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        radius: constraints.maxWidth * 0.1,
+                        backgroundImage: AssetImage(imagePath),
+                      ),
+                      SizedBox(width: constraints.maxWidth * 0.03),
+                      CircleAvatar(
+                        radius: constraints.maxWidth * 0.1,
+                        backgroundImage: AssetImage(vehicleImagePath),
+                      ),
+                    ],
+                  ),
+                ),
+                Positioned(
+                  top: constraints.maxWidth * 0.02,
+                  left: constraints.maxWidth * 0.4,
+                  child: Text(
+                    name,
+                    style: GoogleFonts.mulish(
+                      color: Colors.white,
+                      fontSize: constraints.maxWidth * 0.04,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: constraints.maxWidth * 0.1,
+                  left: constraints.maxWidth * 0.4,
+                  child: Row(
+                    children: [
+                      Text(
+                        'Status: ',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: constraints.maxWidth * 0.035,
+                        ),
+                      ),
+                      Text(
+                        'Approved',
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: constraints.maxWidth * 0.035,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Positioned(
+                  bottom: constraints.maxWidth * 0.02,
+                  left: constraints.maxWidth * 0.4,
+                  child: Row(
+                    children: [
+                      Text(
+                        'From: $joiningDate',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: constraints.maxWidth * 0.035,
+                        ),
+                      ),
+                      SizedBox(width: constraints.maxWidth * 0.02),
+                      Text(
+                        'To: $licenseDate',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: constraints.maxWidth * 0.035,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Positioned(
+                  top: 10,
+                  right: 10,
+                  child:
+                      Icon(Icons.favorite_border_outlined, color: Colors.white),
+                ),
+                Positioned(
+                  bottom: 10,
+                  right: 10,
+                  child: Icon(Icons.arrow_forward_ios, color: Colors.white),
+                ),
+              ],
             ),
           ),
         );
       },
-      child: Container(
-        margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10),
-        width: double.infinity,
-        height: 200, // Make the container more square
-        decoration: BoxDecoration(
-          color: Color(0xff1e283a),
-          borderRadius: BorderRadius.circular(20.0),
-        ),
-        child: Stack(
-          children: [
-            Positioned(
-              top: 10,
-              left: 10,
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundImage: AssetImage(imagePath),
-                  ),
-                  SizedBox(width: 20),
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundImage: AssetImage(vehicleImagePath),
-                  ),
-                ],
-              ),
-            ),
-            Positioned(
-              top: 10,
-              left: 300,
-              child: Text(
-                name,
-                style: GoogleFonts.mulish(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-            Positioned(
-              top: 40,
-              left: 300,
-              child: Row(
-                children: [
-                  Text(
-                    'Status: ',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
-                  Text(
-                    'Approved',
-                    style: TextStyle(color: Colors.green, fontSize: 16),
-                  ),
-                ],
-              ),
-            ),
-            Positioned(
-              bottom: 10,
-              left: 300,
-              child: Row(
-                children: [
-                  Text(
-                    'From: $joiningDate',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
-                  SizedBox(width: 10),
-                  Text(
-                    'To: $licenseDate',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
-                ],
-              ),
-            ),
-            Positioned(
-              top: 10,
-              right: 10,
-              child: Icon(Icons.favorite_border_outlined, color: Colors.white),
-            ),
-            Positioned(
-              bottom: 10,
-              right: 10,
-              child: Icon(Icons.arrow_forward_ios, color: Colors.white),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
