@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'swift_detail_screen.dart'; // Import the new screen
-import 'innova_detail_screen.dart';
-import 'ertiga_detail_screen.dart';
 
-class VehiclesScreen extends StatelessWidget {
+class OilChangeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,9 +32,8 @@ class VehiclesScreen extends StatelessWidget {
               child: ListView(
                 padding: EdgeInsets.all(16.0),
                 children: [
-                  _buildVehicleCard(context, 'Swift', '200', 'Active'),
-                  _buildVehicleCard(context, 'Innova', '200', 'Active'),
-                  _buildVehicleCard(context, 'Ertiga', '200', 'Active'),
+                  _buildVehicleCard(context, 'Innova', '', 'Undone'),
+                  _buildVehicleCard(context, 'Ertiga', '', 'Undone'),
                 ],
               ),
             ),
@@ -50,24 +46,6 @@ class VehiclesScreen extends StatelessWidget {
   Widget _buildVehicleCard(
       BuildContext context, String name, String price, String status) {
     return GestureDetector(
-      onTap: () {
-        if (name == 'Swift') {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => SwiftDetailScreen()),
-          );
-        } else if (name == 'Innova') {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => InnovaDetailScreen()),
-          );
-        } else if (name == 'Ertiga') {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => ErtigaDetailScreen()),
-          );
-        }
-      },
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10),
         padding: EdgeInsets.all(10.0),
@@ -86,7 +64,6 @@ class VehiclesScreen extends StatelessWidget {
                     child: Image.asset('lib/assets/images/$name.png',
                         fit: BoxFit.cover),
                     height: 160),
-                Icon(Icons.favorite_border_outlined, color: Colors.white),
               ],
             ),
             Padding(
@@ -112,12 +89,12 @@ class VehiclesScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Rs. $price",
+                      Text(" $price",
                           style: GoogleFonts.karla(
                               color: Colors.white,
                               fontSize: 20,
                               fontWeight: FontWeight.w300)),
-                      Text('2 Persons',
+                      Text('',
                           style: GoogleFonts.karla(
                               color: Colors.white,
                               fontSize: 18,
@@ -133,9 +110,7 @@ class VehiclesScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(status,
-                      style: TextStyle(
-                          color: Colors.lightGreenAccent, fontSize: 15)),
-                  Icon(Icons.arrow_forward_ios, color: Colors.white),
+                      style: TextStyle(color: Colors.red, fontSize: 15)),
                 ],
               ),
             ),
