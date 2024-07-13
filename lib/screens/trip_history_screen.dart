@@ -122,8 +122,12 @@ class TripHistoryScreen extends StatelessWidget {
                       backgroundImage: AssetImage(vehicleImagePath),
                     ),
                     Transform.translate(
+<<<<<<< HEAD
                       offset:
                           Offset(-imageRadius * 0.8, 0), // Adjust the overlap
+=======
+                      offset: Offset(-imageRadius * 0.8, 0), // Adjust the overlap
+>>>>>>> origin/main
                       child: CircleAvatar(
                         radius: imageRadius,
                         backgroundImage: AssetImage(imagePath),

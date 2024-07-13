@@ -24,8 +24,12 @@ class ErtigaDetailScreen extends StatelessWidget {
                     Navigator.pop(context);
                   },
                 ),
+<<<<<<< HEAD
                 Text('Ertiga',
                     style: TextStyle(color: Colors.white, fontSize: 22)),
+=======
+                Text('Ertiga', style: TextStyle(color: Colors.white, fontSize: 22)),
+>>>>>>> origin/main
               ],
             ),
             Expanded(
@@ -45,8 +49,12 @@ class ErtigaDetailScreen extends StatelessWidget {
                           alignment: Alignment.centerRight,
                           child: Image.asset(
                             'lib/assets/images/filein.png', // Add the image of Swift here
+<<<<<<< HEAD
                             height:
                                 250, // Adjusted height for better visibility
+=======
+                            height: 250, // Adjusted height for better visibility
+>>>>>>> origin/main
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -55,6 +63,7 @@ class ErtigaDetailScreen extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+<<<<<<< HEAD
                               Text('Features',
                                   style: GoogleFonts.mulish(
                                       color: Colors.black,
@@ -70,6 +79,16 @@ class ErtigaDetailScreen extends StatelessWidget {
                                       '6 seats', Icons.event_seat),
                                   _buildFeatureCard(
                                       '6.4L', Icons.local_gas_station),
+=======
+                              Text('Features', style: GoogleFonts.mulish(color: Colors.black, fontSize: 25, fontWeight: FontWeight.w400)),
+                              SizedBox(height: 5), // Reduced space here
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  _buildFeatureCard('manual', Icons.drive_eta),
+                                  _buildFeatureCard('6 seats', Icons.event_seat),
+                                  _buildFeatureCard('6.4L', Icons.local_gas_station),
+>>>>>>> origin/main
                                 ],
                               ),
                             ],
@@ -81,6 +100,7 @@ class ErtigaDetailScreen extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+<<<<<<< HEAD
                               Text('Maintenance',
                                   style: GoogleFonts.mulish(
                                       color: Colors.black,
@@ -90,6 +110,12 @@ class ErtigaDetailScreen extends StatelessWidget {
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
+=======
+                              Text('Maintenance', style: GoogleFonts.mulish(color: Colors.black, fontSize: 25, fontWeight: FontWeight.w400)),
+                              SizedBox(height: 5), // Reduced space here
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+>>>>>>> origin/main
                                 children: [
                                   _buildStatusCard('Wiper Status', '57%'),
                                   _buildStatusCard('Oil Change', '86%'),
@@ -112,11 +138,16 @@ class ErtigaDetailScreen extends StatelessWidget {
                               ),
                             ),
                             child: Padding(
+<<<<<<< HEAD
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 20.0, vertical: 10.0),
                               child: Text('Maintenance History',
                                   style: GoogleFonts.mulish(
                                       color: Colors.white, fontSize: 16)),
+=======
+                              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                              child: Text('Maintenance History', style: GoogleFonts.mulish(color: Colors.white, fontSize: 16)),
+>>>>>>> origin/main
                             ),
                           ),
                         ),
@@ -146,8 +177,12 @@ class ErtigaDetailScreen extends StatelessWidget {
           children: [
             Icon(icon, color: Colors.white, size: 45),
             SizedBox(height: 10),
+<<<<<<< HEAD
             Text(title,
                 style: GoogleFonts.mulish(color: Colors.white, fontSize: 20)),
+=======
+            Text(title, style: GoogleFonts.mulish(color: Colors.white, fontSize: 20)),
+>>>>>>> origin/main
           ],
         ),
       ),
@@ -166,8 +201,12 @@ class ErtigaDetailScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+<<<<<<< HEAD
             Text(title,
                 style: GoogleFonts.mulish(color: Colors.white, fontSize: 16)),
+=======
+            Text(title, style: GoogleFonts.mulish(color: Colors.white, fontSize: 16)),
+>>>>>>> origin/main
             SizedBox(height: 10),
             Container(
               width: 80, // Set the width of the LinearProgressIndicator
@@ -178,8 +217,12 @@ class ErtigaDetailScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10),
+<<<<<<< HEAD
             Text(status,
                 style: GoogleFonts.mulish(color: Colors.white, fontSize: 16)),
+=======
+            Text(status, style: GoogleFonts.mulish(color: Colors.white, fontSize: 16)),
+>>>>>>> origin/main
           ],
         ),
       ),

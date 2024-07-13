@@ -95,12 +95,21 @@ class MaintenanceScreen extends StatelessWidget {
   }
 
   Widget _buildMaintenanceCard(
+<<<<<<< HEAD
     BuildContext context,
     String title,
     String subtitle,
     String imagePath1,
     String imagePath2,
   ) {
+=======
+      BuildContext context,
+      String title,
+      String subtitle,
+      String imagePath1,
+      String imagePath2,
+      ) {
+>>>>>>> origin/main
     return Card(
       color: Color(0xff1e283a),
       margin: EdgeInsets.symmetric(vertical: 10),
@@ -123,10 +132,15 @@ class MaintenanceScreen extends StatelessWidget {
             ],
           ),
         ),
+<<<<<<< HEAD
         title: Text(title,
             style: GoogleFonts.oxygen(color: Colors.white, fontSize: 18)),
         subtitle: Text(subtitle,
             style: GoogleFonts.oxygen(color: Colors.white, fontSize: 14)),
+=======
+        title: Text(title, style: GoogleFonts.oxygen(color: Colors.white, fontSize: 18)),
+        subtitle: Text(subtitle, style: GoogleFonts.oxygen(color: Colors.white, fontSize: 14)),
+>>>>>>> origin/main
         trailing: Icon(Icons.keyboard_arrow_right, color: Colors.white),
         onTap: () {
           if (title == 'Tire Change') {
@@ -152,8 +166,12 @@ class MaintenanceScreen extends StatelessWidget {
           } else if (title == 'Filter Replacement') {
             Navigator.push(
               context,
+<<<<<<< HEAD
               MaterialPageRoute(
                   builder: (context) => FilterReplacementScreen()),
+=======
+              MaterialPageRoute(builder: (context) => FilterReplacementScreen()),
+>>>>>>> origin/main
             );
           }
         },

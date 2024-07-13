@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
 class FilterReplacementScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -24,8 +28,12 @@ class FilterReplacementScreen extends StatelessWidget {
                     Navigator.pop(context);
                   },
                 ),
+<<<<<<< HEAD
                 Text('Vehicles',
                     style: TextStyle(color: Colors.white, fontSize: 22)),
+=======
+                Text('Vehicles', style: TextStyle(color: Colors.white, fontSize: 22)),
+>>>>>>> origin/main
               ],
             ),
             Expanded(
@@ -43,8 +51,12 @@ class FilterReplacementScreen extends StatelessWidget {
     );
   }
 
+<<<<<<< HEAD
   Widget _buildVehicleCard(
       BuildContext context, String name, String price, String status) {
+=======
+  Widget _buildVehicleCard(BuildContext context, String name, String price, String status) {
+>>>>>>> origin/main
     return GestureDetector(
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10),
@@ -60,10 +72,14 @@ class FilterReplacementScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+<<<<<<< HEAD
                 Container(
                     child: Image.asset('lib/assets/images/$name.png',
                         fit: BoxFit.cover),
                     height: 160),
+=======
+                Container(child: Image.asset('lib/assets/images/$name.png', fit: BoxFit.cover), height: 160),
+>>>>>>> origin/main
               ],
             ),
             Padding(
@@ -74,6 +90,7 @@ class FilterReplacementScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+<<<<<<< HEAD
                       Text(name,
                           style: GoogleFonts.mulish(
                               color: Colors.white,
@@ -84,11 +101,16 @@ class FilterReplacementScreen extends StatelessWidget {
                               color: Colors.white,
                               fontSize: 15,
                               fontWeight: FontWeight.w300)),
+=======
+                      Text(name, style: GoogleFonts.mulish(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w400)),
+                      Text('License No.', style: GoogleFonts.mulish(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w300)),
+>>>>>>> origin/main
                     ],
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+<<<<<<< HEAD
                       Text(" $price",
                           style: GoogleFonts.karla(
                               color: Colors.white,
@@ -99,6 +121,10 @@ class FilterReplacementScreen extends StatelessWidget {
                               color: Colors.white,
                               fontSize: 18,
                               fontWeight: FontWeight.w300)),
+=======
+                      Text(" $price", style: GoogleFonts.karla(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w300)),
+                      Text('', style: GoogleFonts.karla(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w300)),
+>>>>>>> origin/main
                     ],
                   ),
                 ],
@@ -109,8 +135,12 @@ class FilterReplacementScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+<<<<<<< HEAD
                   Text(status,
                       style: TextStyle(color: Colors.red, fontSize: 15)),
+=======
+                  Text(status, style: TextStyle(color: Colors.red, fontSize: 15)),
+>>>>>>> origin/main
                 ],
               ),
             ),
@@ -118,5 +148,9 @@ class FilterReplacementScreen extends StatelessWidget {
         ),
       ),
     );
+<<<<<<< HEAD
   }
 }
+=======
+  }}
+>>>>>>> origin/main

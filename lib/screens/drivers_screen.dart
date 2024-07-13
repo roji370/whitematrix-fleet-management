@@ -1,7 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+<<<<<<< HEAD
 
 class DriversScreen extends StatelessWidget {
+=======
+import 'package:mongo_dart/mongo_dart.dart' as mongo;
+
+class DriversScreen extends StatefulWidget {
+  @override
+  _DriversScreenState createState() => _DriversScreenState();
+}
+
+class _DriversScreenState extends State<DriversScreen> {
+  List<Map<String, dynamic>> drivers = [];
+
+  @override
+  void initState() {
+    super.initState();
+    fetchDrivers();
+  }
+
+  Future<void> fetchDrivers() async {
+    var db = await mongo.Db.create("mongodb://<your-mongodb-url>");
+    await db.open();
+    var collection = db.collection('drivers');
+    var result = await collection.find().toList();
+    setState(() {
+      drivers = result;
+    });
+    await db.close();
+  }
+
+>>>>>>> origin/main
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +61,7 @@ class DriversScreen extends StatelessWidget {
               ],
             ),
             Expanded(
+<<<<<<< HEAD
               child: ListView(
                 padding: EdgeInsets.all(16.0),
                 children: [
@@ -75,6 +106,18 @@ class DriversScreen extends StatelessWidget {
                       'deets_ais.pdf',
                       25), // Add more driver cards as needed
                 ],
+=======
+              child: ListView.builder(
+                padding: EdgeInsets.all(16.0),
+                itemCount: drivers.length,
+                itemBuilder: (context, index) {
+                  var driver = drivers[index];
+                  return _buildDriverCard(
+                    context,
+                    driver,
+                  );
+                },
+>>>>>>> origin/main
               ),
             ),
           ],
@@ -83,6 +126,7 @@ class DriversScreen extends StatelessWidget {
     );
   }
 
+<<<<<<< HEAD
   Widget _buildDriverCard(
       BuildContext context,
       String name,
@@ -91,18 +135,38 @@ class DriversScreen extends StatelessWidget {
       String licenseDate,
       String licenseDetails,
       int tripsTaken) {
+=======
+  Widget _buildDriverCard(BuildContext context, Map<String, dynamic> driver) {
+>>>>>>> origin/main
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => DriverDetailsScreen(
+<<<<<<< HEAD
               name: name,
               imagePath: imagePath,
               joiningDate: joiningDate,
               licenseDate: licenseDate,
               licenseDetails: licenseDetails,
               tripsTaken: tripsTaken,
+=======
+              name: driver['name'],
+              imagePath: driver['imagePath'],
+              joiningDate: driver['joiningDate'],
+              licenseDate: driver['licenseDate'],
+              licenseDetails: driver['licenseDetails'],
+              tripsTaken: driver['tripsTaken'],
+              username: driver['username'],
+              password: driver['password'],
+              mobileNumber: driver['mobileNumber'],
+              location: driver['location'],
+              driverPin: driver['driverPin'],
+              licenseNumber: driver['licenseNumber'],
+              licenseExpiryDate: driver['licenseExpiryDate'],
+              notes: driver['notes'],
+>>>>>>> origin/main
             ),
           ),
         );
@@ -110,7 +174,11 @@ class DriversScreen extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10),
         width: double.infinity,
+<<<<<<< HEAD
         height: 200, // Make the container more square
+=======
+        height: 200,
+>>>>>>> origin/main
         decoration: BoxDecoration(
           color: Color(0xff1e283a),
           borderRadius: BorderRadius.circular(20.0),
@@ -122,8 +190,13 @@ class DriversScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   ClipOval(
+<<<<<<< HEAD
                     child: Image.asset(
                       imagePath,
+=======
+                    child: Image.network(
+                      driver['imagePath'],
+>>>>>>> origin/main
                       width: 120,
                       height: 120,
                       fit: BoxFit.cover,
@@ -131,7 +204,11 @@ class DriversScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 10.0),
                   Text(
+<<<<<<< HEAD
                     name,
+=======
+                    driver['name'],
+>>>>>>> origin/main
                     style: GoogleFonts.mulish(
                       color: Colors.white,
                       fontSize: 18,
@@ -157,6 +234,7 @@ class DriversScreen extends StatelessWidget {
     );
   }
 }
+<<<<<<< HEAD
 
 class DriverDetailsScreen extends StatelessWidget {
   final String name;
@@ -290,3 +368,5 @@ class DriverDetailsScreen extends StatelessWidget {
     );
   }
 }
+=======
+>>>>>>> origin/main
